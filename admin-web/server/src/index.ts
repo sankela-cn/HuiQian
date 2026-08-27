@@ -7,6 +7,7 @@ import { createWebApp } from './app.js'
 import { HttpPiApi } from './pi-api.js'
 
 const port = Number(process.env.WEB_PORT ?? 3001)
+const host = process.env.WEB_HOST ?? '0.0.0.0'
 const piBaseUrl = process.env.PI_BASE_URL
 const sessionSecret = process.env.WEB_SESSION_SECRET
 
@@ -30,6 +31,6 @@ if (existsSync(clientEntry)) {
   })
 }
 
-app.listen(port, '127.0.0.1', () => {
-  console.log(`HuiQian web service is running at http://127.0.0.1:${port}`)
+app.listen(port, host, () => {
+  console.log(`HuiQian web service is running at http://${host}:${port}`)
 })

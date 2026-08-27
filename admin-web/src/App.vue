@@ -969,6 +969,7 @@ onMounted(checkSession)
                   class="attendance-photo-image"
                   :src="attendancePhotoUrl(record) ?? ''"
                   :preview-src-list="[attendancePhotoUrl(record) ?? '']"
+                  preview-teleported
                   fit="cover"
                   :alt="`${record.name}的打卡照片`"
                   @error="markAttendancePhotoUnavailable(record.id)"

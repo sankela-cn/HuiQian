@@ -80,6 +80,7 @@ cp .env.example .env
 ```env
 PI_BASE_URL=http://10.42.0.1:8000
 WEB_PORT=3001
+WEB_HOST=0.0.0.0
 WEB_SESSION_SECRET=请替换为足够长的随机字符串
 ```
 
@@ -103,7 +104,7 @@ npm run server:dev
 
 ```bash
 # 终端二
-npm run dev -- --host 127.0.0.1 --port 5173
+npm run dev -- --host 0.0.0.0 --port 5173
 ```
 
 浏览器访问 `http://127.0.0.1:5173/`。

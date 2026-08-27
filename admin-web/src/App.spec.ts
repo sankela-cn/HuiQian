@@ -240,6 +240,8 @@ describe('HuiQian admin dashboard', () => {
     expect(wrapper.text()).toContain('刘恩泽')
     const photo = wrapper.get('img[alt="刘恩泽的打卡照片"]')
     expect(photo.attributes('src')).toBe('/web-api/attendance/photos/20260826_090000_000001.jpg')
+    const image = wrapper.findComponent({ name: 'ElImage' })
+    expect(image.props('previewTeleported')).toBe(true)
   })
 
   it('shows an unavailable state when an attendance record has no photo', async () => {
